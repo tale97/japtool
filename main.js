@@ -1,9 +1,9 @@
 japDictionary = {
-  こ: "ko",
-  ん: "n",
-  に: "ni",
-  ち: "chi",
-  は: "wa",
+  こ: ".\\images\\ko.png",
+  ん: ".\\images\\n.png",
+  に: ".\\images\\ni.png",
+  ち: ".\\images\\chi.png",
+  は: ".\\images\\wa.png",
 };
 
 japLetters = document.querySelectorAll("div#jap-phrase > span");
@@ -14,7 +14,8 @@ japLetters.forEach((item) => item.addEventListener("click", giveHint));
 
 function giveHint() {
   hintbox = document.getElementById("hint");
-  hintbox.innerText = japDictionary[this.innerText];
+  hintbox.src = japDictionary[this.innerText];
+  this.classList.add("hover");
 }
 
 console.log("hello world");
